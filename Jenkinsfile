@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // Ejecuta tu comando específico de Gradle
                 // Se usa ./gradlew (el wrapper) para asegurar la versión correcta
-                test -D"cucumber.filter.tags=@Plans"
+                test -D "cucumber.filter.tags=@Plans"
             }
         }
     }
