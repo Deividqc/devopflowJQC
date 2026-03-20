@@ -38,6 +38,8 @@ public class BasePage {
         /*Para que corra en Jenkins */
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new"); // Ejecuta sin abrir ventana física
+        options.addArguments("--window-size=1920,1080"); // Fuerza resolución Desktop
+        options.addArguments("--start-maximized");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         

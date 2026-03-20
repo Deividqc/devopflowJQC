@@ -18,3 +18,8 @@ bin/
 # --- Sistema Operativo ---
 .DS_Store
 Thumbs.db
+
+# --- Reportes de Pruebas ---
+# (Opcional: si no quieres subir los reportes de Cucumber que se generan al fallar)
+target/
+build/reports/
