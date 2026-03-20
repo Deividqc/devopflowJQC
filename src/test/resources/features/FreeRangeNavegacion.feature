@@ -2,7 +2,7 @@
 Feature: Navigation
     Para ver las paginas dentro de Feature
     Sin haber logueado
-    I can clicl the navigation bar links
+    I can click the navigation bar links
 
 Background: I am on the Free Range Testers web without logging in.
     Given I navigate to www.freerangetesters.com
