@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,7 +34,16 @@ public class BasePage {
     */
     static {
         WebDriverManager.chromedriver().setup();
- 
+        /*Para que corra en Jenkins */
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new"); // Ejecuta sin abrir ventana física
+        options.addArguments("--window-size=1920,1080"); // Fuerza resolución Desktop
+        options.addArguments("--start-maximized");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        
+        //Inicializa la variable estática 'driver' con una instancia de ChromeDriver
+        //Retirar "options si no funciona"
         //Inicializa la variable estática 'driver' con una instancia de ChromeDriver
         driver = new ChromeDriver();
     }
