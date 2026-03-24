@@ -33,7 +33,8 @@ public class BasePage {
      * WebDriverManager va a estar descargando y configurando automáticamente el driver del navegador
     */
     static {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().clearDriverCache().setup();
         /*Para que corra en Jenkins */
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new"); // Ejecuta sin abrir ventana física
