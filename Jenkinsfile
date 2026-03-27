@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        jdk 'JDK-21'
+    }
     parameters{
         //Define Parameter Tag (Use String or choice - in the way we add something like Regression, Smoke, Production)
         string (name: "CUCUMBER_TAGS", defaultValue: "@Navigation", description: "Tags de cucumber a ejecutar")

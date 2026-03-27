@@ -64,7 +64,7 @@ tasks.withType(Test) {
 tasks.register('runCucumber') {
     doLast {
         // Definimos el tag. Si no se pasa por parámetro, usa '@smoke' por defecto
-        def cucumberTags = project.hasProperty('tags') ? project.property('tags') : '@smoke'
+        def cucumberTags = project.hasProperty('tags') ? project.property('tags') : '@Navigation'
         
         javaexec {
             main = 'io.cucumber.core.cli.Main'
