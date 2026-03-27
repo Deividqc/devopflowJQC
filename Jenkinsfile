@@ -18,7 +18,7 @@ pipeline {
             steps{
                echo 'Executing feature Tests...'
                         // Using -PbuildDir for this branch use its own compilation folder
-                        bat 'call gradlew.bat clean test -D"cucumber.filter.tags='${params.CUCUMBER_TAGS}'" --no-daemon --no-configuration-cache' 
+                         bat "gradlew.bat runCucumber -Ptags=${params.CUCUMBER_TAGS} --no-daemon" 
             }
 
         }
