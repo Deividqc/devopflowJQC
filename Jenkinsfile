@@ -8,16 +8,6 @@ pipeline {
         string (name: "CUCUMBER_TAGS", defaultValue: "@Navigation", description: "Tags de cucumber a ejecutar")
     }
     stages{
-        stage('Checkout') 
-        {
-            steps 
-            {
-                echo 'Downloading code from current branch'
-                git branch: 'origin/CucumberFromPipeline', 
-                credentialsId: '544c3656-dbeb-4d03-89e7-69784d10f289', 
-                url: 'https://github.com/Deividqc/devopflowJQC.git'
-            }
-        }
         stage('Execution'){
             steps{
                echo 'Executing feature Tests...'
