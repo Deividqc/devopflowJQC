@@ -74,7 +74,7 @@ tasks.register('runCucumber') {
                 '--plugin', 'json:target/cucumber-report.json', // REQUERIDO para Jenkins
                 '--glue','steps',
                 '--tags', cucumberTags,                       // Dinámico por parámetro
-                'src/test/resources'
+                'src/test/resources/features'
             ]
         }
     }
