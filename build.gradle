@@ -55,7 +55,7 @@ tasks.register('runCucumber') {
         javaexec {
             main = 'io.cucumber.core.cli.Main'
             classpath = sourceSets.test.runtimeClasspath
-            args = ['--plugin', 'pretty', '--tags', '@Plans', 'src/test/resources']
+            args = ['--plugin', 'json:build/reports/cucumber.json', 'pretty', '--tags', 'src/test/resources']
         }
     }
 } 
