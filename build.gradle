@@ -50,12 +50,13 @@ tasks.withType(Test) {
     systemProperty 'file.encoding', 'UTF-8'
 }
 
+//Comment Code Commented for being replaced for another one to run by a parameter tag
 tasks.register('runCucumber') {
     doLast {
         javaexec {
             main = 'io.cucumber.core.cli.Main'
             classpath = sourceSets.test.runtimeClasspath
-            args = ['--plugin', 'pretty', '--tags', '@Plans', 'src/test/resources']
+            args = ['--plugin', 'pretty', '--tags', 'src/test/resources']
         }
     }
 } 
