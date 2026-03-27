@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters{
         //Define Parameter Tag (Use String or choice - in the way we add something like Regression, Smoke, Production)
-        string (name: 'CUCUMBER_TAGS, defaultValue: '@smoke', description: 'Tags de cucumber a ejecutar')
+        string (name: "CUCUMBER_TAGS", defaultValue: "@Navigation", description: "Tags de cucumber a ejecutar")
     }
     stages{
         stage('Check out'){
