@@ -63,12 +63,16 @@ tasks.withType(Test) {
 
 tasks.register('runCucumber') {
     doLast {
+        // Esto obliga a Gradle a compilar tus clases de Java antes de intentar ejecutarlas
+       dependsOn assemble, testClasses
         // Definimos el tag. Si no se pasa por parámetro, usa '@smoke' por defecto
         def cucumberTags = project.hasProperty('tags') ? project.property('tags') : '@Navigation'
         
         javaexec {
             main = 'io.cucumber.core.cli.Main'
             classpath = sourceSets.test.runtimeClasspath
+            // Importante: para que no falle el build antes de generar el reporte
+            ignoreExitValue = true
             args = [
                 '--plugin', 'pretty', 
                 '--plugin', 'json:target/cucumber-report.json', // REQUERIDO para Jenkins
