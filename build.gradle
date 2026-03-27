@@ -51,7 +51,7 @@ tasks.withType(Test) {
 }
 
 //Comment Code Commented for being replaced for another one to run by a parameter tag
-tasks.register('runCucumber') {
+/*tasks.register('runCucumber') {
     doLast {
         javaexec {
             main = 'io.cucumber.core.cli.Main'
@@ -59,4 +59,22 @@ tasks.register('runCucumber') {
             args = ['--plugin', 'pretty', '--tags', 'src/test/resources']
         }
     }
-} 
+}*/ 
+
+tasks.register('runCucumber') {
+    doLast {
+        // Definimos el tag. Si no se pasa por parámetro, usa '@smoke' por defecto
+        def cucumberTags = project.hasProperty('tags') ? project.property('tags') : '@smoke'
+        
+        javaexec {
+            main = 'io.cucumber.core.cli.Main'
+            classpath = sourceSets.test.runtimeClasspath
+            args = [
+                '--plugin', 'pretty', 
+                '--plugin', 'json:target/cucumber-report.json', // REQUERIDO para Jenkins
+                '--tags', cucumberTags,                       // Dinámico por parámetro
+                'src/test/resources'
+            ]
+        }
+    }
+}
