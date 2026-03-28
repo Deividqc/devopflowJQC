@@ -14,7 +14,7 @@ pipeline {
                         // Using -PbuildDir for this branch use its own compilation folder
                          bat "gradlew.bat runCucumber -Ptags=${params.CUCUMBER_TAGS} --no-daemon"
                          // Esto te dirá en la consola si el archivo se creó realmente
-                        bat "dir /s cucumber-report.json" 
+                        bat "dir /s cucumber-reports.json" 
             }
 
         }
@@ -23,7 +23,7 @@ pipeline {
         always{
             // Genera el reporte visual usando el plugin "Cucumber reports"
             cucumber buildStatus: 'NULL',
-                     fileIncludePattern: 'cucumber-report.json',
+                     fileIncludePattern: 'cucumber-reports.json',
                      jsonReportDirectory: 'build'
         }
     }
