@@ -75,7 +75,7 @@ tasks.register('runCucumber') {
             ignoreExitValue = true
             args = [
                 '--plugin', 'pretty', 
-                '--plugin', 'json:target/cucumber-reports.json', // REQUERIDO para Jenkins
+                '--plugin', 'json:build/cucumber-reports.json', // REQUERIDO para Jenkins
                 '--tags', cucumberTags,                       // Dinámico por parámetro
                 'src/test/resources/features'
             ]
