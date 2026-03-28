@@ -23,8 +23,8 @@ pipeline {
         always{
             // Genera el reporte visual usando el plugin "Cucumber reports"
             cucumber buildStatus: 'NULL',
-                     fileIncludePattern: '**/*.json',
-                     jsonReportDirectory: ''
+                     fileIncludePattern: 'cucumber-report.json',
+                     jsonReportDirectory: 'build'
         }
     }
 }
