@@ -9,7 +9,7 @@ import pages.BasePage;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources", 
     glue="steps",
-    plugin = {"pretty", "json:target/cucumber-reports.json","html:target/cucumber-reports"},
+    plugin = {"pretty", "json:target/cucumber-reports.json","html:target/cucumber-reports.html"},
     tags ="@Navigation"
 )
 
