@@ -15,9 +15,8 @@ Examples:
 |Cursos   |
 |Recursos |
 |Blog     |
-|Udemy    |
 |Mentorías|
-|Academia |
+|Eventos  |
 
 @Courses
 Scenario: Courses are presented correctly to potential costumers
