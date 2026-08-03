@@ -15,7 +15,6 @@ Examples:
 |Cursos   |
 |Recursos |
 |Blog     |
-|Udemy    |
 |Mentorías|
 |Academia |
 
