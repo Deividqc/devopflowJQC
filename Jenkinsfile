@@ -16,7 +16,7 @@ pipeline {
         {
             parallel 
             {
-                stage('Courses feature') 
+                stage('Courses feature - changes') 
                 {
                     steps 
                     {
