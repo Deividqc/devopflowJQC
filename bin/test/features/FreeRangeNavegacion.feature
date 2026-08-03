@@ -28,4 +28,7 @@ Scenario: Users can select a plan to signing up
     When I go to Cursos using navigation bar
     And I select Elegir Plan
     
-    
+@Udemy
+Scenario: Users can select to see courses in Udemy
+    When I go to Cursos using navigation bar
+    And I select ver cursos en Udemy

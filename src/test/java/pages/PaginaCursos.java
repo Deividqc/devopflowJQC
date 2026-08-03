@@ -1,28 +1,30 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-
 public class PaginaCursos extends BasePage {
 
-    private String IntroducionTestingLink="//a[normalize-space()='Introducción al Testing de Software' and @href]";
-    //private String SelectPlan="//h3[normalize-space()='Academia']/ancestor::section[1]//a[contains(normalize-space(),'Elegir')][1]";
+    private String IntroducionTestingLink = "//a[normalize-space()='Introducción al Testing de Software' and @href]";
+    // private String
+    // SelectPlan="//h3[normalize-space()='Academia']/ancestor::section[1]//a[contains(normalize-space(),'Elegir')][1]";
 
-    
-    private String SelectPlan="//a[normalize-space()='Elegir este plan']";
-
+    private String SelectPlan = "//a[normalize-space()='Elegir este plan']";
+    private String SelectUdemy = "//a[normalize-space()='VER CURSOS EN UDEMY']";
 
     // Constructor de la clase
     public PaginaCursos() {
         // Llama al constructor de la clase padre
         super(driver);
     }
-   
-    public void clickOnIntroduccionTestingLink(){
+
+    public void clickOnIntroduccionTestingLink() {
         clickElement(IntroducionTestingLink);
     }
 
-    public void clickOnSelectPlanAcademiaLink(){
+    public void clickOnSelectPlanAcademiaLink() {
         clickElement(SelectPlan);
+    }
+
+    public void clickOnVerUdemy() {
+        clickElement(SelectUdemy);
     }
 
 }

@@ -25,13 +25,22 @@ pipeline {
                         bat 'call gradlew.bat clean test -D"cucumber.filter.tags=@Courses" -PbuildDir=build_courses --no-daemon --no-configuration-cache'
                     }
                 }
-                stage('Plans feature') 
+                /*stage('Plans feature') 
                 {
                     steps 
                     {
                         echo 'Executing Planes feature Test ...'
                         // Using -PbuildDir for this branch use its own compilation folder       
                         bat 'call gradlew.bat clean test -D"cucumber.filter.tags=@Plans" -PbuildDir=build_plans --no-daemon --no-configuration-cache'
+                    }
+                }*/
+                stage('Udemy section feature') 
+                {
+                    steps 
+                    {
+                        echo 'Executing Udemy feature Test ...'
+                        // Using -PbuildDir for this branch use its own compilation folder       
+                        bat 'call gradlew.bat clean test -D"cucumber.filter.tags=@Udemy" -PbuildDir=build_udemy --no-daemon --no-configuration-cache'
                     }
                 }
             }
